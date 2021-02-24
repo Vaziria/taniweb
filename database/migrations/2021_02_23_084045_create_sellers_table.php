@@ -14,11 +14,20 @@ class CreateSellersTable extends Migration
     public function up()
     {
         Schema::create('sellers', function (Blueprint $table) {
-            $table->id();
-            $table->string('seller_name', 130);
-            $table->text('image_profile');
-            $table->text('location');
+            $table->unsignedBigInteger('user_id');
+            $table->string('seller_name')->unique();
+            $table->text('image_profile')->nullable();
+            $table->string('district')->nullable();
+            $table->string('city')->nullable();
+            $table->string('province')->nullable();
+            $table->string('nation')->nullable();
+
             $table->timestamps();
+
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('CASCADE');
         });
     }
 

@@ -14,7 +14,11 @@ class AddressController extends Controller
      */
     public function index()
     {
-        //
+        $data = Address::ofUser()->get();
+
+        return view('address.list', [
+            'alamat'=> $data
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class AddressController extends Controller
      */
     public function create()
     {
-        //
+        return view('address.form');
     }
 
     /**
