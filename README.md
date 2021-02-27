@@ -4,3 +4,9 @@ https://github.com/intelligo-systems/laravel-ecommerce.git
 https://github.com/vorsurm/LaravelEcommerce
 https://github.com/bagisto/bagisto
 https://github.com/aimeos/aimeos-laravel
+
+
+https://github.com/marketplacekit/marketplacekit
+https://github.com/ant-vel/App
+
+https://github.com/aimeos/aimeos
