@@ -27,6 +27,14 @@ class CreateProductsTable extends Migration
             $table->text('image_3')->nullable();
             $table->text('image_4')->nullable();
             $table->integer('cat_id');
+            $table->boolean('hide')->nullable();
+            $table->text('note')->nullable();
+            
+            // statisik product
+            $table->integer('sold')->default('0');
+            $table->integer('tx')->default('0');
+            $table->integer('sold_success')->default('0');
+            $table->integer('tx_success')->default('0');
 
             $table->timestamps();
             $table->softDeletes();
