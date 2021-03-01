@@ -2,6 +2,11 @@
 
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\ProductController;
+
+// Dashboard
+use App\Http\Controllers\Dashboard\HomeController as DashboardHome;
+use App\Http\Controllers\Dashboard\ProductController as DashboardProduct;
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,13 +21,20 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/// dashboard route
+
+// home
+Route::get('/', [DashboardHome::class, 'index'])->name('dashboard.home');
+Route::get('/cat/{id}', [DashboardHome::class, 'categories'])->name('dashboard.categories');
+
+// product
+Route::get('/product/{id}', [DashboardProduct::class, 'singlePage'])->name('product.single');
+
+///
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 Route::middleware(['auth'])->prefix('seller')->group(function () {
     Route::resource('product', ProductController::class);
