@@ -18,6 +18,10 @@ class Order extends Model
         return $this->hasMany(OrderProduct::class);
     }
 
+    public function product(){
+        return $this->belongsToMany(Product::class, 'order_product_pivot');
+    }
+
     public function fill_address($id){
         $address = Address::find($id);
         if($address){
@@ -57,7 +61,7 @@ class Order extends Model
     public static function checkout($alamatid, $ppayload){
         $order = false;
 
-        DB::transaction(function () use ($alamatid, $ppayload, $order){
+        DB::transaction(function () use ($alamatid, $ppayload){
             $dorder = new Order();
 
             $subtotal = 0;
@@ -66,6 +70,7 @@ class Order extends Model
 
             foreach($ppayload as $payload){
                 $product = Product::find($payload['id']);
+                $dorder->product()->attach($product);
 
                 // cek satu seller
                 if($seller_id == null){

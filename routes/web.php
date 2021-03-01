@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Dashboard\HomeController as DashboardHome;
 use App\Http\Controllers\Dashboard\ProductController as DashboardProduct;
 
+use App\Http\Controllers\ForPublic\PublicProductController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,3 +42,6 @@ Route::middleware(['auth'])->prefix('seller')->group(function () {
 });
 
 Route::resource('address', AddressController::class)->middleware('auth');
+
+// route ikan
+Route::get('product/{id}', [PublicProductController::class, 'single_product']);

@@ -52,8 +52,8 @@ class ProductController extends Controller
     public function save_image(Product $product, Request $req){
 
         foreach($this->key_image as $key){
-            if($req->file($key)){
-                $product->{ $key } = $this->save_image_item($req->file($key));
+            if($req->file($key)->isValid()){
+                $product->{ $key } = $this->save_image_item($req->{ $key });
             }
         }
     }
@@ -68,11 +68,11 @@ class ProductController extends Controller
 
     public function detect_change_image(Product $product, Request $req){
         foreach($this->key_image as $key){
-            if($req->file($key)){
+            if($req->file($key)->isValid()){
                 $path = $product->{ $key };
                 Storage::delete($path);
 
-                $path = $this->save_image_item($req->file($key));
+                $path = $this->save_image_item($req->{ $key });
                 $product->{ $key } = $path;
             }
         }

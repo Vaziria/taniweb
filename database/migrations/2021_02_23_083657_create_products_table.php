@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('name', 130);
             $table->integer('price');
             $table->integer('stock');
+            $table->integer('weight');
             $table->string('stock_unit');
             $table->text('description');
             $table->text('image_1');
@@ -35,6 +36,8 @@ class CreateProductsTable extends Migration
             $table->integer('tx')->default('0');
             $table->integer('sold_success')->default('0');
             $table->integer('tx_success')->default('0');
+            $table->float('avg_rating', 8, 2)->default('0');
+            $table->integer('rating_count')->default('0');
 
             $table->timestamps();
             $table->softDeletes();
@@ -43,6 +46,7 @@ class CreateProductsTable extends Migration
             ->references('id')
             ->on('users')
             ->onDelete('CASCADE');
+            
         });
     }
 
