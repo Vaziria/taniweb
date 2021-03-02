@@ -10,11 +10,11 @@
 </style>
 <div class="wd-100p d-block overflow-hidden">
 	<div id="{{ $id }}-slider" class="px-2 mb-3">
-	    @for ($i = 1; $i <= 10; $i++)
+	    @foreach ($products as $product)
 	        <div class="">
-	            @include('components.products.card')
+	            @include('components.products.card', ['product' => $product])
 	        </div>
-	    @endfor
+	    @endforeach
 	</div>
 </div>
 <script type="text/javascript">

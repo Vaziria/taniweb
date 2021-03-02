@@ -44,4 +44,4 @@ Route::middleware(['auth'])->prefix('seller')->group(function () {
 Route::resource('address', AddressController::class)->middleware('auth');
 
 // route ikan
-Route::get('product/{id}', [PublicProductController::class, 'single_product']);
+// Route::get('product/{id}', [PublicProductController::class, 'single_product']);

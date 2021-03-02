@@ -28,17 +28,17 @@
 
     <h4 class="tx-bold mb-4"><i class="fas fa-leaf tx-info"></i> Terbaru</h4>
     <div class="mb-2">
-        @include('components.products.slider-card', ['id' => 'terbaru'])
+        @include('components.products.slider-card', ['id' => 'terbaru', 'products' => $product_terbaru])
     </div>
 
     <h4 class="tx-bold mb-4"><i class="fas fa-clipboard-check tx-info"></i> Produk Pilihan</h4>
     <div class="mb-2">
-        @include('components.products.slider-card', ['id' => 'pilihan'])
+        @include('components.products.slider-card', ['id' => 'pilihan', 'products' => $product_pilihan])
     </div>
 
     <h4 class="tx-bold mb-4"><i class="fas fa-clipboard-check tx-info"></i> Produk Terlaris</h4>
     <div class="mb-2">
-        @include('components.products.slider-card', ['id' => 'terlaris'])
+        @include('components.products.slider-card', ['id' => 'terlaris', 'products' => $product_terlaris])
     </div>
 </div>
 @endsection

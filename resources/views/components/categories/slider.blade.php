@@ -10,12 +10,12 @@
 </style>
 <div class="wd-100p d-block p-1 overflow-hidden">
     <div id="kategori-slider" class="d-flex">
-    @foreach ($categories as $category)
+    @foreach ($categories as $key => $category)
 
         @if(isset($active) && $active == $category['name'])
-            <a href="{{ route('dashboard.categories', ['id' => $category['name']]) }}" class="category-icon active tx-center wd-100 ht-100p p-2 rounded-5 d-block">
+            <a href="{{ route('dashboard.categories', ['id' => $key % 10 != 0 ? $key % 10 : 1 ]) }}" class="category-icon active tx-center wd-100 ht-100p p-2 rounded-5 d-block">
         @else
-            <a href="{{ route('dashboard.categories', ['id' => $category['name']]) }}" class="category-icon tx-center wd-100 ht-100p p-2 rounded-5 d-block">
+            <a href="{{ route('dashboard.categories', ['id' => $key % 10 != 0 ? $key % 10 : 1 ]) }}" class="category-icon tx-center wd-100 ht-100p p-2 rounded-5 d-block">
         @endif
         
             <i class="{{ $category['icon'] }} tx-{{ $category['color'] }} tx-30 d-block"></i>

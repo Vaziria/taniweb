@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Product;
+
 class HomeController extends Controller
 {
 
@@ -23,10 +25,19 @@ class HomeController extends Controller
         ['icon' => 'fas fa-ellipsis-v', 'name' => 'lainnya', 'color' => 'info']
     ];
 
+    protected function getProduct($limit=15) {
+        return Product::with('seller')->limit($limit)->get();
+    }
+
     public function index()
     {
         $data = [];
         $data['categories'] = $this->categories;
+
+        // product dashboard
+        $data['product_terbaru'] = $this->getProduct();
+        $data['product_pilihan'] = $this->getProduct();
+        $data['product_terlaris'] = $this->getProduct();
 
         return view('dashboard.index', $data);
     }
