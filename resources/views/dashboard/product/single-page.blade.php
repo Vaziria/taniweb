@@ -1,21 +1,6 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<style scoped type="text/css">
-    #product-image-slider .owl-nav .owl-prev {
-        top: 40px;
-        left: 0px;
-    }
-    #product-image-slider .owl-nav .owl-next {
-        top: 40px;
-        right: 0px;
-    }
-    pre {
-        white-space: pre-wrap;
-        font-family: Roboto;
-        line-height: 1.6;
-    }
-</style>
 <div class="container">
     <div class="row mt-4 mb-5">
         <div class="col-md-4 overflow-hidden">
@@ -105,38 +90,58 @@
         @include('components.products.slider-card', ['id' => 'terkait', 'products' => $product_terkait])
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-sidebar/3.3.1/sticky-sidebar.min.js" integrity="sha512-iVhJqV0j477IrAkkzsn/tVJWXYsEqAj4PSS7AG+z1F7eD6uLKQxYBg09x13viaJ1Z5yYhlpyx0zLAUUErdHM6A==" crossorigin="anonymous"></script>
-<script type="text/javascript">
-    jQuery(document).ready(function($){
 
-        //  image slider
-        const slider = $('#product-image-slider'),
-        config = {
-            nav: true,
-            loop:false,
-            dots: false,
-            pagination: false,
-            margin: 5,
-            navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
-            responsive: {
-                0: {
-                    items: 1
-                },
-                768: {
-                    items: 4
+@push('styles')
+    <style scoped type="text/css">
+        #product-image-slider .owl-nav .owl-prev {
+            top: 40px;
+            left: 0px;
+        }
+        #product-image-slider .owl-nav .owl-next {
+            top: 40px;
+            right: 0px;
+        }
+        pre {
+            white-space: pre-wrap;
+            font-family: Roboto;
+            line-height: 1.6;
+        }
+    </style>
+@endpush
+@push('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-sidebar/3.3.1/sticky-sidebar.min.js" integrity="sha512-iVhJqV0j477IrAkkzsn/tVJWXYsEqAj4PSS7AG+z1F7eD6uLKQxYBg09x13viaJ1Z5yYhlpyx0zLAUUErdHM6A==" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+
+            //  image slider
+            const slider = $('#product-image-slider'),
+            config = {
+                nav: true,
+                loop:false,
+                dots: false,
+                pagination: false,
+                margin: 5,
+                navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 4
+                    }
                 }
-            }
-        };
+            };
 
-        slider.each(function () {
-            $(this).owlCarousel(config);
+            slider.each(function () {
+                $(this).owlCarousel(config);
+            });
+
+            // sticky sidebar
+
+            new StickySidebar('#image-sidebar', {topSpacing: 90})
+            new StickySidebar('#product-action', {topSpacing: 90})
+
         });
-
-        // sticky sidebar
-
-        new StickySidebar('#image-sidebar', {topSpacing: 90})
-        new StickySidebar('#product-action', {topSpacing: 90})
-
-    });
-</script>
+    </script>
+@endpush
 @endsection

@@ -3,7 +3,7 @@
         <img class="img-fluid rounded-5" src="{{ $product->image_1 }}" alt="Image">
     </a>
 
-    <button class="btn pos-absolute r-0 bg-white pd-x-8 pd-y-5 rounded-circle"><i class="fas fa-heart tx-20 tx-gray-400 mt-1"></i></button>
+    <button class="btn pos-absolute r-5 t-5 bg-white pd-x-8 pd-y-5 rounded-circle"><i class="fas fa-heart tx-20 tx-gray-400 mt-1"></i></button>
 
     <div class="card-body p-2">
         <a href="{{ route('product.single', ['id' => $product->id]) }}" class="ht-100">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 use App\Models\Product;
 
@@ -49,6 +50,9 @@ class HomeController extends Controller
 
         $activeIndex = array_search($id, array_column($this->categories, 'name'));
         $data['category_data'] = $this->categories[$activeIndex];
+
+        $products = Product::where('cat_id', $id)->limit(20)->get();
+        $data['category_products'] = $products;
 
         return view('dashboard.categories.index', $data);
     }

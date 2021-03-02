@@ -10,33 +10,23 @@
 
     <h4 class="tx-bold mb-4"><i class="{{ $category_data['icon'] }} tx-{{ $category_data['color'] }}"></i> {{ $category_data['name'] }}</h4>
     <div class="row mb-3">
-        @for ($i = 1; $i <= 5; $i++)
-            <div class="col-6 col-md-3 col-lg">
-                @include('components.products.card')
+        @foreach ($category_products as $product)
+            <div class="col-6 col-md-3 col-lg mb-3">
+                @include('components.products.card', ['product' => $product])
             </div>
-        @endfor
-    </div>
-    <div class="row mb-3">
-        @for ($i = 1; $i <= 5; $i++)
-            <div class="col-6 col-md-3 col-lg">
-                @include('components.products.card')
-            </div>
-        @endfor
-    </div>
-    <div class="row mb-3">
-        @for ($i = 1; $i <= 5; $i++)
-            <div class="col-6 col-md-3 col-lg">
-                @include('components.products.card')
-            </div>
-        @endfor
-    </div>
-    <div class="row mb-3">
-        @for ($i = 1; $i <= 5; $i++)
-            <div class="col-6 col-md-3 col-lg">
-                @include('components.products.card')
-            </div>
-        @endfor
+        @endforeach
     </div>
     <button class="btn btn-info tx-bold d-block mg-x-auto rounded-5 mb-5">Muat Lebih Banyak</button>
 </div>
 @endsection
+
+@push('styles')
+	<style scoped type="text/css">
+		@media(min-width: 992px) {
+			.col-lg {
+				min-width: 20%;
+				max-width: 20%;
+			}
+		}
+	</style>
+@endpush

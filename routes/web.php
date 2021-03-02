@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 // Dashboard
 use App\Http\Controllers\Dashboard\HomeController as DashboardHome;
 use App\Http\Controllers\Dashboard\ProductController as DashboardProduct;
+use App\Http\Controllers\Dashboard\SearchController as DashboardSearch;
 
 use App\Http\Controllers\ForPublic\PublicProductController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,9 @@ Route::get('/cat/{id}', [DashboardHome::class, 'categories'])->name('dashboard.c
 
 // product
 Route::get('/product/{id}', [DashboardProduct::class, 'singlePage'])->name('product.single');
+
+// search
+Route::get('/search', [DashboardSearch::class, 'index'])->name('dashboard.search');
 
 ///
 
