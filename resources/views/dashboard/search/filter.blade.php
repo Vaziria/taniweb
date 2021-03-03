@@ -1,5 +1,5 @@
 <div id="filter-sidebar">
-	<div class="card rounded-5">
+	<div class="card bd-0 rounded-5">
 		<div class="card-header bg-white">
 			<h5 class="tx-bold d-flex">Filter</h5>
 		</div>

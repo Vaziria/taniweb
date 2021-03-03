@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@if(isset($title)) {{ $title }} | @endif {{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -15,6 +15,11 @@
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('css/owl-carousel-custom.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style type="text/css">
+        #user.dropdown-toggle::after {
+            display: none;
+        }
+    </style>
     @stack('styles')
 </head>
 <body>
@@ -22,7 +27,7 @@
         <div class="pos-fixed t-0 ht-70 z-index-200 bd-b bd-gray-200 bg-white shadow-sm wd-100p">
             <div class="container d-flex mg-t-5">
                 <div>
-                    <a class="az-logo tx-info tx-26" href="{{ url('/') }}">
+                    <a class="az-logo tx-info tx-26 mt-1" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 </div>

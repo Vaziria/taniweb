@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Dashboard\HomeController as DashboardHome;
 use App\Http\Controllers\Dashboard\ProductController as DashboardProduct;
 use App\Http\Controllers\Dashboard\SearchController as DashboardSearch;
+use App\Http\Controllers\Dashboard\CartProductController as DashboardCart;
 
 use App\Http\Controllers\ForPublic\PublicProductController;
 use Illuminate\Support\Facades\Route;
@@ -30,10 +31,14 @@ Route::get('/', [DashboardHome::class, 'index'])->name('dashboard.home');
 Route::get('/cat/{id}', [DashboardHome::class, 'categories'])->name('dashboard.categories');
 
 // product
-Route::get('/product/{id}', [DashboardProduct::class, 'singlePage'])->name('product.single');
+Route::get('/product/{id}', [DashboardProduct::class, 'singlePage'])->name('dashboard.product-single');
 
 // search
 Route::get('/search', [DashboardSearch::class, 'index'])->name('dashboard.search');
+
+// cart & checkout
+Route::get('/cart', [DashboardCart::class, 'index'])->name('dashboard.cart');
+Route::post('/checkout', [DashboardCart::class, 'checkout'])->name('dashboard.checkout');
 
 ///
 

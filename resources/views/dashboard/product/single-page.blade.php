@@ -56,27 +56,32 @@
 
         <div class="col-md-4">
             <div id="product-action">
-                <div class="card rounded-10 shadow-base">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <h5 class="tx-bold product-title">{{ $product->name }}</h5>
-                            <button class="btn"><i class="fas fa-heart tx-20 tx-gray-400 mt-1"></i></button>
-                        </div>
-                        <hr>
-                        <h5 class="tx-bold mb-4">Ringkasan Belanja</h5>
-                        <div class="d-flex">
-                            <span>Subtotal</span>
-                            <h5 class="tx-bold tx-orange mg-l-auto">Rp 90.000</h5>
-                        </div>
-                        <div class="input-group">
-                            <button class="input-group-prepend input-group-text tx-bold tx-20">-</button>
-                            <input type="number" class="form-control" value="1">
-                            <button class="input-group-append input-group-text tx-bold tx-20">+</button>
-                        </div>
-                        <small class="tx-gray-600">miminal pembelian 1 pack</small>
-                        <div class="d-flex mt-3">
-                            <div class="btn btn-outline-orange tx-bold rounded-5 mg-l-auto mr-2">+ keranjang</div>
-                            <div class="btn btn-orange tx-bold rounded-5">Beli</div>
+                <div class="rounded-10 product-action">
+                    <div class="card bd-0 rounded-10">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <h5 class="tx-bold product-title">{{ $product->name }}</h5>
+                                <button class="btn"><i class="fas fa-heart tx-20 tx-gray-400 mt-1"></i></button>
+                            </div>
+                            <hr>
+                            <h5 class="tx-bold mb-4">Ringkasan Belanja</h5>
+                            <div class="d-flex">
+                                <span>Subtotal</span>
+                                <h5 class="tx-bold tx-orange mg-l-auto">Rp 90.000</h5>
+                            </div>
+                            <div class="input-group">
+                                <button class="input-group-prepend input-group-text tx-bold tx-20">-</button>
+                                <input type="number" class="form-control" value="1">
+                                <button class="input-group-append input-group-text tx-bold tx-20">+</button>
+                            </div>
+                            <small class="tx-gray-600">miminal pembelian 1 pack</small>
+                            <div class="d-flex mt-3">
+                                <div class="btn btn-outline-orange tx-bold rounded-5 mg-l-auto mr-2">+ keranjang</div>
+                                <form action="{{ route('dashboard.checkout') }}" method="POST">
+                                    @csrf
+                                    <button class="btn btn-orange tx-bold rounded-5">Beli</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

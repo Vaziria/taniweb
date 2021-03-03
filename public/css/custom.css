@@ -26,6 +26,19 @@
   white-space: nowrap;
 }
 
+a {
+  cursor: pointer;
+}
+
+
+/* navbar */
+.icon-bar {
+  font-size: 20px; 
+  color: var(--mainColor);
+}
+.icon-bar:hover {
+  color: #3bb001;
+}
 
 /* auth styling */
 span.auth-logo {
@@ -67,10 +80,20 @@ span.auth-logo {
 
 
 /* form styling */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 input.form-hover:active, input.form-hover:focus {
 	border: 1px solid var(--mainColor);
 }
-
 .input-group-append + input {
   border-right: 0px;
   border-radius: 0px;
@@ -133,5 +156,9 @@ input.form-hover:active, input.form-hover:focus {
 }
 .product-discount{
   color: #fa591d;
-  background-color: #ffcebd; }
-  
+  background-color: #ffcebd;
+}
+.product-action:hover {
+  border-width: 1px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.20);
+}
