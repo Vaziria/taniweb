@@ -7,14 +7,14 @@
 	@endif
 
 	<div class="container py-5">
-		<h3 class="tx-bold mb-5"><i class="fas fa-shopping-bag"></i> Keranjang</h3>
+		<h3 class="tx-bold mb-5"><i class="fad fa-bags-shopping tx-info"></i> Keranjang</h3>
 		<div class="row">
 			<div class="col-8">
 				<div class="mb-5">
 					@each('components.cart.cart-item', $carts, 'cart', 'components.cart.cart-empty')
 				</div>
 
-				<h4 class="tx-bold mb-4"><i class="fas fa-clipboard-check tx-info"></i> Rekomendasi</h4>
+				<h4 class="tx-bold mb-4"><i class="fad fa-clipboard-check tx-info"></i> Rekomendasi</h4>
 				<div class="row mb-3">
 				    @foreach ($recomendations as $product)
 				        <div class="col-6 col-md-4 col-lg-3 mb-3">
@@ -31,7 +31,7 @@
 							@csrf
 							<h5 class="tx-bold mb-4">Ringkasan Belanja</h5>
 							<h6 class="tx-15 d-flex">
-								<span><i class="fas fa-shopping-basket tx-gray-600"></i> 3 produk</span>
+								<span><i class="fad fa-shopping-basket tx-gray-600"></i> 3 produk</span>
 								<a class="mg-l-auto tx-12 mt-1" data-toggle="modal" data-target="#billInfo"><i class="fas fa-info-circle"></i> lihat selengkapnya</a>
 							</h6>
 

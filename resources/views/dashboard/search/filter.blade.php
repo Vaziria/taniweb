@@ -1,6 +1,6 @@
 <div id="filter-sidebar">
-	<div class="card bd-0 rounded-5">
-		<div class="card-header bg-white">
+	<div class="card bd-0 rounded-5 product-action">
+		<div class="card-header bg-white mt-1">
 			<h5 class="tx-bold d-flex">Filter</h5>
 		</div>
 		<form id="filter-product" class="card-body">

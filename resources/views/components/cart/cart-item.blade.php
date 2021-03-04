@@ -5,7 +5,7 @@
         		<input type="checkbox"><span></span>
         	</label>
         @endif
-		<img src="https://www.agromaret.com/cache/img/crop/photo-profiles/photo_profile.jpg" class="wd-50 rounded-circle mr-3">
+		<img src="{{ config('user.default_image') }}" class="wd-50 rounded-circle mr-3">
 		<div>
 			<p class="tx-bold mb-0">{{ $cart[0]->seller->seller_name }}</p>
 			<span class="tx-gray-600"><i class="fas fa-map-marker-alt"></i> {{ $cart[0]->seller->city }}</span>

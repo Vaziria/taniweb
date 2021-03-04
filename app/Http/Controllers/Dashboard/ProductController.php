@@ -27,6 +27,7 @@ class ProductController extends Controller
            	'seller'
        	]);
     	
+        $data['title'] = $product->name;
     	$data['product'] = $product;
     	$data['active_image'] = $product->image_1;
     	$data['product_terkait'] = $this->getProduct();

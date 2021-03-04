@@ -26,9 +26,9 @@
 
             <h4 class="tx-bold">{{ $product->name }}</h4>
             <div class="d-flex mb-4 tx-gray-700">
-                <span class="mr-3"><i class="fas fa-eye"></i> 321</span>.
-                <span class="mx-3"><i class="fas fa-shopping-bag"></i> 321</span>.
-                <span class="ml-3"><i class="far fa-comment-dots"></i> 321</span>
+                <span class="mr-3"><i class="fad fa-eye"></i> 321</span>.
+                <span class="mx-3"><i class="fad fa-shopping-bag"></i> 321</span>.
+                <span class="ml-3"><i class="fad fa-comment-dots"></i> 321</span>
             </div>
 
             <span class="tx-bold tx-info d-block mb-1"><i class="fas fa-tags"></i> {{ $product->cat_id }}</span>
@@ -51,7 +51,15 @@
 
             <h5 class="tx-bold mb-3">Deskripsi Produk</h5>
             <div class="mb-4"></div>
-            <pre class="tx-12 tx-md-14">{{ $product->description }}</pre>
+            <pre class="tx-12 tx-md-14 mb-4">{{ $product->description }}</pre>
+
+            <div class="mb-3 d-flex bg-gray-100 bd bd-gray-200 p-3 rounded-5">
+                <img src="{{ config('user.default_image') }}" class="wd-50 rounded-circle mr-3">
+                <div>
+                    <p class="tx-bold mb-0">{{ $product->seller->seller_name }}</p>
+                    <span class="tx-gray-600"><i class="fas fa-map-marker-alt"></i> {{ $product->seller->city }}</span>
+                </div>
+            </div>
         </div>
 
         <div class="col-md-4">
@@ -90,7 +98,7 @@
 
     </div>
 
-    <h4 class="tx-bold mb-4"><i class="fas fa-anchor tx-info"></i> Produk Terkait</h4>
+    <h4 class="tx-bold mb-4"><i class="fad fa-anchor tx-info"></i> Produk Terkait</h4>
     <div class="mb-2">
         @include('components.products.slider-card', ['id' => 'terkait', 'products' => $product_terkait])
     </div>

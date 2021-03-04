@@ -12,18 +12,18 @@ class HomeController extends Controller
 {
 
     protected $categories = [
-        ['icon' => 'fas fa-th-large', 'name' => 'Semua Kategori', 'color' => 'gray-700'],
+        ['icon' => 'fad fa-th-large', 'name' => 'Semua Kategori', 'color' => 'gray-700'],
         ['icon' => 'fab fa-pagelines', 'name' => 'Beras', 'color' => 'warning'],
-        ['icon' => 'fas fa-lemon', 'name' => 'Buah-buahan', 'color' => 'warning'],
-        ['icon' => 'fas fa-carrot', 'name' => 'Sayuran', 'color' => 'orange'],
-        ['icon' => 'fas fa-pepper-hot', 'name' => 'Cabai', 'color' => 'danger'],
-        ['icon' => 'fas fa-mortar-pestle', 'name' => 'Rempah-rempah', 'color' => 'gray-300'],
-        ['icon' => 'fas fa-dumpster', 'name' => 'Pupuk Organik', 'color' => 'gray-500'],
-        ['icon' => 'fas fa-fill-drip', 'name' => 'Obat-obatan', 'color' => 'purple'],
-        ['icon' => 'fas fa-seedling', 'name' => 'Bibit Tanaman', 'color' => 'info'],
-        ['icon' => 'fas fa-cookie-bite', 'name' => 'Olahan', 'color' => 'orange'],
-        ['icon' => 'fas fa-tractor', 'name' => 'Alat atau Mesin', 'color' => 'gray-800'],
-        ['icon' => 'fas fa-ellipsis-v', 'name' => 'lainnya', 'color' => 'info']
+        ['icon' => 'fad fa-lemon', 'name' => 'Buah-buahan', 'color' => 'warning'],
+        ['icon' => 'fad fa-carrot', 'name' => 'Sayuran', 'color' => 'orange'],
+        ['icon' => 'fad fa-pepper-hot', 'name' => 'Cabai', 'color' => 'danger'],
+        ['icon' => 'fad fa-mortar-pestle', 'name' => 'Rempah-rempah', 'color' => 'gray-300'],
+        ['icon' => 'fad fa-dumpster', 'name' => 'Pupuk Organik', 'color' => 'gray-500'],
+        ['icon' => 'fad fa-fill-drip', 'name' => 'Obat-obatan', 'color' => 'purple'],
+        ['icon' => 'fad fa-seedling', 'name' => 'Bibit Tanaman', 'color' => 'info'],
+        ['icon' => 'fad fa-cookie-bite', 'name' => 'Olahan', 'color' => 'orange'],
+        ['icon' => 'fad fa-tractor', 'name' => 'Alat atau Mesin', 'color' => 'gray-800'],
+        ['icon' => 'fad fa-ellipsis-v', 'name' => 'lainnya', 'color' => 'dark']
     ];
 
     protected function getProduct($limit=15) {

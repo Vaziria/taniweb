@@ -2560,7 +2560,7 @@ input[type="button"].btn-block {
   .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #3366ff; }
+    background-color: #82b541; }
   .dropdown-item.disabled, .dropdown-item:disabled {
     color: #7987a1;
     pointer-events: none;
@@ -4946,7 +4946,7 @@ button.bg-danger:focus {
   background-color: #bd2130 !important; }
 
 .bg-light {
-  background-color: #f4f5f8 !important; }
+  background-color: rgba(0,0,0,0.02); !important; }
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,

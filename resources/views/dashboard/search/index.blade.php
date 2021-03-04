@@ -39,7 +39,7 @@
 						<p class="tx-gray-500">Cobalah menggunakan kata kunci lain</p>
 					</div>
 
-					<h4 class="tx-bold mb-4"><i class="fas fa-clipboard-check tx-info"></i> Coba Produk Pilihan yang Lain</h4>
+					<h4 class="tx-bold mb-4"><i class="fad fa-clipboard-check tx-info"></i> Coba Produk Pilihan yang Lain</h4>
 					<div class="row mb-3">
 				        @foreach ($product_pilihan as $product)
 				            <div class="col-6 col-md-4 col-lg-3 mb-3">

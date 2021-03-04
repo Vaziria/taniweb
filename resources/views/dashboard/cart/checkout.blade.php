@@ -5,7 +5,7 @@
 	@include('components.cart.bill-detail', ['carts' => $products])
 
 	<div class="container py-5">
-		<h3 class="tx-bold mb-5"><i class="fas fa-cart-arrow-down"></i> Checkout</h3>
+		<h3 class="tx-bold mb-5"><i class="fad fa-cart-arrow-down tx-info"></i> Checkout</h3>
 		<div class="row">
 
 			<div class="col-8">
@@ -31,12 +31,12 @@
 						<div class="card card-body rounded-10 bd-0">
 							<h5 class="tx-bold mb-4">Ringkasan Belanja</h5>
 							<h6 class="tx-15 d-flex mb-3">
-								<span><i class="fas fa-shopping-basket tx-gray-600"></i> 3 produk</span>
+								<span><i class="fad fa-shopping-basket tx-gray-600"></i> 3 produk</span>
 								<a class="mg-l-auto tx-12 mt-1" data-toggle="modal" data-target="#billInfo"><i class="fas fa-info-circle"></i> lihat selengkapnya</a>
 							</h6>
 
 							<div class="btn bd rounded-5 mb-3 d-flex">
-							    <i class="fas fa-ticket-alt mt-1 fa-2x"></i>
+							    <i class="fad fa-ticket-alt mt-1 fa-2x tx-gray-700"></i>
 							    <div class="tx-left ml-3">
 							        <b class="d-block">Gunakan Voucher</b>
 							        <small class="tx-gray-600">Pakailah voucer yang Anda miliki untuk mendapatkan potongan.</small>

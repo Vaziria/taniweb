@@ -12,7 +12,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h6 class="tx-15 mb-3"><i class="fas fa-shopping-basket tx-gray-600"></i> 3 produk</h6>
+                <h6 class="tx-15 mb-3"><i class="fad fa-shopping-basket tx-gray-600"></i> 3 produk</h6>
                 
                 @foreach($carts as $product)
                 	<div class="d-flex mb-3">

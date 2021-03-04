@@ -8,6 +8,7 @@ use App\Http\Controllers\Dashboard\HomeController as DashboardHome;
 use App\Http\Controllers\Dashboard\ProductController as DashboardProduct;
 use App\Http\Controllers\Dashboard\SearchController as DashboardSearch;
 use App\Http\Controllers\Dashboard\CartProductController as DashboardCart;
+use App\Http\Controllers\Dashboard\UserController as DashboardUser;
 
 use App\Http\Controllers\ForPublic\PublicProductController;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,14 @@ Route::get('/search', [DashboardSearch::class, 'index'])->name('dashboard.search
 // cart & checkout
 Route::get('/cart', [DashboardCart::class, 'index'])->name('dashboard.cart');
 Route::post('/checkout', [DashboardCart::class, 'checkout'])->name('dashboard.checkout');
+
+// user
+Route::group(['namespace' => 'DashboardUser', 'prefix' => '', 'middleware' => 'auth'], function() {
+	Route::get('/account', [DashboardUser::class, 'account'])->name('dashboard.account');
+	Route::get('/orders', [DashboardUser::class, 'orders'])->name('dashboard.orders');
+	Route::get('/order/{id}', [DashboardUser::class, 'order_detail'])->name('dashboard.order-detail');
+	Route::get('/bills', [DashboardUser::class, 'bills'])->name('dashboard.bills');
+});
 
 ///
 
