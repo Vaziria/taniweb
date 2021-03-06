@@ -16,7 +16,7 @@
     <link href="{{ asset('css/owl-carousel-custom.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <style type="text/css">
-        #user.dropdown-toggle::after {
+        #user.dropdown-toggle::after, #notification.dropdown-toggle::after {
             display: none;
         }
         .btn-menu-user:hover {

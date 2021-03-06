@@ -13,6 +13,9 @@
 .no-wrap {
   white-space: nowrap !important;
 }
+.wrap {
+  word-wrap: break-word !important;
+}
 
 .tx-bold {
   font-weight: 700;

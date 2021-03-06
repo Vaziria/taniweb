@@ -7,7 +7,7 @@
 <hr>
 
 @if(!isset($no_voucher))
-	<div class="btn bd rounded-5 mb-3 d-flex">
+	<div class="btn bd rounded-5 mb-3 d-flex" data-toggle="modal" data-target="#voucher-select">
 	    <i class="fad tx-gray-700 fa-ticket-alt mt-1 fa-2x"></i>
 	    <div class="tx-left ml-3">
 	        <b class="d-block">Gunakan Voucher</b>

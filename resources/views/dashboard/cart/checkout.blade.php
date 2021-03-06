@@ -2,6 +2,7 @@
 
 @section('content')
 
+	@include('components.voucher.select')
 	@include('components.cart.bill-detail', ['carts' => $products])
 
 	<div class="container py-5">
@@ -35,7 +36,7 @@
 								<a class="mg-l-auto tx-12 mt-1" data-toggle="modal" data-target="#billInfo"><i class="fas fa-info-circle"></i> lihat selengkapnya</a>
 							</h6>
 
-							<div class="btn bd rounded-5 mb-3 d-flex">
+							<div class="btn bd rounded-5 mb-3 d-flex" data-toggle="modal" data-target="#voucher-select">
 							    <i class="fad fa-ticket-alt mt-1 fa-2x tx-gray-700"></i>
 							    <div class="tx-left ml-3">
 							        <b class="d-block">Gunakan Voucher</b>

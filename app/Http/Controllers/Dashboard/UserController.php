@@ -44,4 +44,20 @@ class UserController extends Controller
 
     	return view('dashboard.user.bills', $data);
     }
+
+    public function bill_detail() {
+    	$data = [];
+    	$data['title'] = 'Detail Tagihan';
+    	$data['sample_product'] = Product::inRandomOrder()->first();
+
+    	return view('dashboard.user.bill-detail', $data);
+    }
+
+    public function wishlist() {
+    	$data = [];
+    	$data['title'] = 'Wishlist';
+    	$data['wishlists'] = $this->getProduct(10);
+
+    	return view('dashboard.user.wishlist', $data);
+    }
 }

@@ -4,6 +4,7 @@
 	
 	@if($carts->count() > 0)
 		@include('components.cart.bill-detail', ['carts' => $carts->first()])
+		@include('components.voucher.select')
 	@endif
 
 	<div class="container py-5">

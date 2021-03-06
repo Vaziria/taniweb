@@ -4,6 +4,20 @@
 	<h4 class="tx-bold"><i class="fad fa-receipt tx-info"></i> Tagihan Saya</h4>
 	<p class="mb-5 tx-gray-600">Selalu bayar tagihan Anda tepat waktu.</p>
 
+	<nav class="navbar navbar-expand-lg navbar-light mb-5 tx-13 d-flex">
+	    <ul class="navbar-nav no-wrap wd-250 mg-l-auto">
+	      	<li class="nav-item mr-3">
+	      	  	<div class="btn btn-outline-info tx-bold rounded-5"><i class="fas fa-sliders-h mr-2"></i> Filter</div>
+	      	</li>
+	      	<select class="form-control rounded-5 tx-bold">
+	      		<option>Terbaru</option>
+	      		<option>Terlama</option>
+	      		<option>A - Z</option>
+	      		<option>Z - A</option>
+	      	</select>
+	    </ul>
+	</nav>
+
 	<!-- if empty -->
 	<div class="d-none tx-center mg-b-100">
 		<i class="fad fa-ballot fa-4x tx-info d-block mb-2"></i>
@@ -13,9 +27,14 @@
 
 	@for($i = 1; $i <= 5; $i++)
 		<div class="bg-light bd bd-gray-100 rounded-5 product-action mb-3">
-			<a class="tx-dark p-3 d-block">
+			<a href="{{ route('dashboard.bill-detail', ['id' => 'test']) }}" class="tx-dark p-3 d-block">
 				<div class="d-flex">
-
+					<div class="mr-4 no-wrap">
+						<div class="d-flex">
+							<img src="{{ config('user.default_image') }}" class="wd-30 rounded-circle mr-3">
+							<h6 class="tx-bold tx-13 mt-2">{{ $sample_product->seller->seller_name }}</h6>
+						</div>
+					</div>
 					<div>
 						<img src="{{ $sample_product->image_1 }}" class="wd-50 rounded-5">
 					</div>

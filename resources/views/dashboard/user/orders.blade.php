@@ -32,17 +32,19 @@
 	      	  	<a class="nav-link disabled" href="#">Pesanan Bermasalah</a>
 	      	</li>
 	    </ul>
-	    <ul class="navbar-nav no-wrap wd-400 ml-3">
-	      	<li class="nav-item mr-3">
-	      	  	<div class="btn btn-outline-info tx-bold rounded-5"><i class="fas fa-sliders-h mr-2"></i> Filter</div>
-	      	</li>
-	      	<select class="form-control rounded-5 tx-bold">
-	      		<option>Terbaru</option>
-	      		<option>Terlama</option>
-	      		<option>A - Z</option>
-	      		<option>Z - A</option>
-	      	</select>
-	    </ul>
+	    <div class="no-wrap ml-3">
+	      	<div class="wd-250 navbar-nav">
+	      		<li class="nav-item mr-3">
+		      	  	<div class="btn btn-outline-info tx-bold rounded-5"><i class="fas fa-sliders-h mr-2"></i> Filter</div>
+		      	</li>
+		      	<select class="form-control rounded-5 tx-bold">
+		      		<option>Terbaru</option>
+		      		<option>Terlama</option>
+		      		<option>A - Z</option>
+		      		<option>Z - A</option>
+		      	</select>
+	      	</div>
+	    </div>
 	</nav>
 
 	<!-- if empty -->

@@ -9,6 +9,8 @@ use App\Http\Controllers\Dashboard\ProductController as DashboardProduct;
 use App\Http\Controllers\Dashboard\SearchController as DashboardSearch;
 use App\Http\Controllers\Dashboard\CartProductController as DashboardCart;
 use App\Http\Controllers\Dashboard\UserController as DashboardUser;
+use App\Http\Controllers\Dashboard\NotificationController as DashboardNotification;
+use App\Http\Controllers\Dashboard\SellerController as DashboardSeller;
 
 use App\Http\Controllers\ForPublic\PublicProductController;
 use Illuminate\Support\Facades\Route;
@@ -47,7 +49,16 @@ Route::group(['namespace' => 'DashboardUser', 'prefix' => '', 'middleware' => 'a
 	Route::get('/orders', [DashboardUser::class, 'orders'])->name('dashboard.orders');
 	Route::get('/order/{id}', [DashboardUser::class, 'order_detail'])->name('dashboard.order-detail');
 	Route::get('/bills', [DashboardUser::class, 'bills'])->name('dashboard.bills');
+	Route::get('/bill/{id}', [DashboardUser::class, 'bill_detail'])->name('dashboard.bill-detail');
+	Route::get('/wishlist', [DashboardUser::class, 'wishlist'])->name('dashboard.wishlist');
 });
+
+// notication
+Route::get('/notification', [DashboardNotification::class, 'index'])->name('dashboard.notification');
+Route::get('/notification/{id}', [DashboardNotification::class, 'detail'])->name('dashboard.notification-detail');
+
+// seller
+Route::get('/merchant/{id}', [DashboardSeller::class, 'seller'])->name('dashboard.seller');
 
 ///
 
